@@ -3,7 +3,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5f;
-    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
+    private bool isPlayerStandOnGround;
 
     Rigidbody2D rb;
     private void Awake()
@@ -29,15 +32,23 @@ public class PlayerController : MonoBehaviour
         float inputMove = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(inputMove * playerSpeed, rb.velocity.y);
 
-        if (inputMove > 0) transform.localScale = new Vector3(1, 1, 1);
-        else if (inputMove < 0) transform.localScale = new Vector3(-1, 1, 1);
+        if (inputMove > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if
+            (inputMove < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     private void HandleJump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isPlayerStandOnGround)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+        isPlayerStandOnGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 }
