@@ -49,6 +49,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
-        isPlayerStandOnGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        isPlayerStandOnGround = Physics2D.OverlapCircle(groundCheck.position, 0.3f, groundLayer);
     }
 }
