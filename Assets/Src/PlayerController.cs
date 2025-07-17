@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     private bool isPlayerStandOnGround;
+    private Animator animator;
 
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovement();
         HandleJump();
+        UpdatePlayerAimation();
     }
 
     private void HandleMovement()
@@ -50,5 +53,15 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
         isPlayerStandOnGround = Physics2D.OverlapCircle(groundCheck.position, 0.3f, groundLayer);
+    }
+
+    private void UpdatePlayerAimation()
+    {
+        bool isWalking = Mathf.Abs(rb.velocity.x) > 0.1f;
+        bool isJumping = !isPlayerStandOnGround;
+        bool isFalling = rb.velocity.y < -0.1f && !isPlayerStandOnGround;
+        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isJumping", isJumping);
+        animator.SetBool("isFalling", isFalling);
     }
 }
