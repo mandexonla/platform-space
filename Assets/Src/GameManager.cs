@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CoinManager.Instance.Addpoint(0);
+        GameOverUI.Instance.gameOverUI.SetActive(false);
     }
 
     // Update is called once per frame

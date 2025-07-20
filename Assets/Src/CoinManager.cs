@@ -9,7 +9,7 @@ public class CoinManager : MonoBehaviour
         Instance = this;
     }
 
-    private int _score = 0;
+    public int _score = 0;
     [SerializeField] private TextMeshProUGUI _scoreText;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class CoinManager : MonoBehaviour
         UpdateScrore();
     }
 
-    private void UpdateScrore()
+    public void UpdateScrore()
     {
         _scoreText.text = _score.ToString();
     }

@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class PlayerColision : MonoBehaviour
 {
+    private GameOverUI _gameOverUI;
     private CoinManager _coinManager;
 
     private void Awake()
     {
         // Lay GameManager de co the goi cac ham cua no
         _coinManager = FindAnyObjectByType<CoinManager>();
+        _gameOverUI = FindAnyObjectByType<GameOverUI>();
     }
 
     /*function nay dc goi khi ma player game va cham vs thanh phan 
@@ -21,6 +23,9 @@ public class PlayerColision : MonoBehaviour
             Destroy(collision.gameObject);
             _coinManager.Addpoint(1); // goi ham Addpoint cua GameManager de cong diem
         }
-
+        else if (collision.CompareTag("Trap"))
+        {
+            _gameOverUI.ShowGameOverUI();
+        }
     }
 }
