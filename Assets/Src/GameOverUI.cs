@@ -1,28 +1,21 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
     public static GameOverUI Instance;
-
-
-    void Awake()
-    {
-        Instance = this;
-    }
-
     [SerializeField] public GameObject gameOverUI;
+    [SerializeField] private Button playAgainButton;
     private bool _isGameOver = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameOverUI.SetActive(false);
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
+        playAgainButton.onClick.AddListener(() =>
+        {
+            Loader.Load(Loader.Scene.SampleScene);
+        });
 
+        Instance = this;
     }
 
     public void ShowGameOverUI()
@@ -31,14 +24,5 @@ public class GameOverUI : MonoBehaviour
         CoinManager.Instance._score = 0;
         Time.timeScale = 0;
         gameOverUI.SetActive(true);
-    }
-
-    public void RestartGame()
-    {
-        _isGameOver = false;
-        CoinManager.Instance._score = 0;
-        CoinManager.Instance.UpdateScrore();
-        Time.timeScale = 1;
-        SceneManager.LoadScene("SampleScene");
     }
 }

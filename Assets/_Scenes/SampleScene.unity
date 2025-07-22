@@ -2316,6 +2316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 778344516}
+  playAgainButton: {fileID: 1819955826}
 --- !u!114 &778344519
 MonoBehaviour:
   m_ObjectHideFlags: 0
