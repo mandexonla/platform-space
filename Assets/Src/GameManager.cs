@@ -9,10 +9,4 @@ public class GameManager : MonoBehaviour
         CoinManager.Instance.Addpoint(0);
         GameOverUI.Instance.gameOverUI.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

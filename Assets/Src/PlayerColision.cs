@@ -31,5 +31,9 @@ public class PlayerColision : MonoBehaviour
         {
             _gameOverUI.ShowGameOverUI();
         }
+        else if (collision.CompareTag("wingame"))
+        {
+            gamewinUI.Instance.GameWin();
+        }
     }
 }
