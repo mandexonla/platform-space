@@ -27,5 +27,9 @@ public class PlayerColision : MonoBehaviour
         {
             _gameOverUI.ShowGameOverUI();
         }
+        else if (collision.CompareTag("Enemy"))
+        {
+            _gameOverUI.ShowGameOverUI();
+        }
     }
 }

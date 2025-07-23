@@ -6,7 +6,7 @@ public class GameOverUI : MonoBehaviour
     public static GameOverUI Instance;
     [SerializeField] public GameObject gameOverUI;
     [SerializeField] private Button playAgainButton;
-    private bool _isGameOver = false;
+    private bool _isGameOver;
 
     private void Awake()
     {
