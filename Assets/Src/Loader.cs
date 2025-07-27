@@ -4,7 +4,8 @@ public static class Loader
 {
     public enum Scene
     {
-        SampleScene,
+        GameScene,
+        MainMenuScene,
     }
 
     public static Scene targetScene;
