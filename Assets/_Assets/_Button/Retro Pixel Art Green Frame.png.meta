@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b1cca60f5525bd4382153a49c16b2be
+guid: 0d2f9621c2751764eaad8f339e92ce87
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,74 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: button_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 256
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -119, y: 80}
-        - {x: -128, y: 72}
-        - {x: -128, y: -73}
-        - {x: -127, y: -80}
-        - {x: 128, y: -80}
-        - {x: 128, y: 76}
-        - {x: 124, y: 80}
-      physicsShape:
-      - - {x: 114, y: -72}
-        - {x: 114, y: -66}
-        - {x: 120, y: -66}
-        - {x: 122, y: -64}
-        - {x: 122, y: -58}
-        - {x: 128, y: -58}
-        - {x: 128, y: 50}
-        - {x: 122, y: 50}
-        - {x: 122, y: 64}
-        - {x: 120, y: 66}
-        - {x: 114, y: 66}
-        - {x: 114, y: 72}
-        - {x: 112, y: 74}
-        - {x: 98, y: 74}
-        - {x: 98, y: 80}
-        - {x: -98, y: 80}
-        - {x: -98, y: 74}
-        - {x: -112, y: 74}
-        - {x: -114, y: 72}
-        - {x: -114, y: 66}
-        - {x: -120, y: 66}
-        - {x: -122, y: 64}
-        - {x: -122, y: 50}
-        - {x: -128, y: 50}
-        - {x: -128, y: -42}
-        - {x: -122, y: -42}
-        - {x: -122, y: -56}
-        - {x: -120, y: -58}
-        - {x: -114, y: -58}
-        - {x: -114, y: -64}
-        - {x: -112, y: -66}
-        - {x: -106, y: -66}
-        - {x: -106, y: -72}
-        - {x: -104, y: -74}
-        - {x: -98, y: -74}
-        - {x: -98, y: -80}
-        - {x: 98, y: -80}
-        - {x: 98, y: -74}
-        - {x: 112, y: -74}
-      tessellationDetail: 1
-      bones: []
-      spriteID: 36b359a66d0cdab42973635e910333bc
-      internalID: -1275575974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -186,8 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      button_0: -1275575974
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
