@@ -4,12 +4,14 @@ public class PlayerColision : MonoBehaviour
 {
     private GameOverUI _gameOverUI;
     private CoinManager _coinManager;
+    private SoundManager _soundManager;
 
     private void Awake()
     {
         // Lay GameManager de co the goi cac ham cua no
         _coinManager = FindAnyObjectByType<CoinManager>();
         _gameOverUI = FindAnyObjectByType<GameOverUI>();
+        _soundManager = FindAnyObjectByType<SoundManager>();
     }
 
     /*function nay dc goi khi ma player game va cham vs thanh phan 
@@ -21,6 +23,7 @@ public class PlayerColision : MonoBehaviour
         if (collision.CompareTag("Coin")) //Coin la cai tag da them vao
         {
             Destroy(collision.gameObject);
+            _soundManager.PlayCoinSound();
             _coinManager.Addpoint(1); // goi ham Addpoint cua GameManager de cong diem
         }
         else if (collision.CompareTag("Trap"))

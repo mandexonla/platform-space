@@ -8,12 +8,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     private bool isPlayerStandOnGround;
     private Animator animator;
+    private SoundManager _soundManager;
 
     private Rigidbody2D rb;
     private void Awake()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        _soundManager = FindAnyObjectByType<SoundManager>();
     }
 
     // Start is called before the first frame update
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isPlayerStandOnGround)
         {
+            _soundManager.PlayJumpSound();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
         isPlayerStandOnGround = Physics2D.OverlapCircle(groundCheck.position, 0.3f, groundLayer);
